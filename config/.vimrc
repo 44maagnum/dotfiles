@@ -11,9 +11,9 @@ set undolevels=1000
 set undoreload=10000
 
 " set directories
-set backupdir=~/.vim/backup
-set directory=~/.vim/swap
-set undodir=~/.vim/undo
+set backupdir=~/.vimfiles/backup
+set directory=~/.vimfiles/swap
+set undodir=~/.vimfiles/undo
 
 " spacing
 set expandtab
@@ -41,8 +41,3 @@ set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 
-" naughtiness
-noremap hh <nop>
-noremap ll <nop>
-noremap jj <nop>
-noremap kk <nop>

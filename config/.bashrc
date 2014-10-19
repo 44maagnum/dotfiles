@@ -30,8 +30,9 @@ then # we're on a linux box
   alias ls='ls --color=auto'
 fi
 
-# sudo is crap... sudo -E is WAY better
+# aliases
 alias sudo='sudo -E'
+alias ls='ls -la'
 
 set -o vi
 export EDITOR=vim
@@ -96,23 +97,10 @@ then
   eval "$(rbenv init -)"
 fi
 
-if [ -d ~/Dropbox/todo ]
-then
-  export TODO_DIR=~/Dropbox/todo
-  export TODOTXT_CFG_FILE=~/.todo.cfg
-  export TODOTXT_DEFAULT_ACTION=ls
-fi
-
 if [ -e ~/.bashrc.local ]
 then
   . ~/.bashrc.local
 fi
-
-# import aliases
-source aliases.sh
-
-# import installation paths
-source installations.sh
 
 # do this last, so stuff in the current directory
 # overrides everything else.
