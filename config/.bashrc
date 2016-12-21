@@ -34,6 +34,7 @@ fi
 alias sudo='sudo -E'
 alias ls='ls -la'
 
+# vim
 set -o vi
 export EDITOR=vim
 export RLWRAP_EDITOR=vi
@@ -59,48 +60,13 @@ then
   export PATH=~/scripts:$PATH
 fi
 
-# add ~/local_scripts to path
-if [ -e ~/local_scripts ]
-then
-	export PATH=~/local_scripts:$PATH
-fi
+# palantir
+source /usr/local/dev-env/bin/profile
+export GOPATH=~/go/
+export PATH=$PATH:$GOPATH/bin
 
-# add git to path
-export PATH=$PATH:/usr/local/git/bin
-
-# add ruby gem bin to path
-export PATH=$PATH:/usr/local/opt/ruby/bin
-
-# add npm executables to the path
-export PATH=$PATH:/usr/local/share/npm/bin
-
-# Java classpath
-export CLASSPATH=.:/usr/share/java/*
-
-# node no readline
-export NODE_NO_READLINE=1
-
-# import hufman aliases
-if [ -e ~/.hufman-aliases ]
-then
-    . ~/.hufman-aliases
-fi
-
-if [ -e ~/scripts/resources/cdup.sh ]
-then
-    alias cdup='. ~/scripts/resources/cdup.sh'
-fi
-
-if [ -d ~/.rbenv ]
-then
-  export PATH=~/.rbenv/bin:$PATH
-  eval "$(rbenv init -)"
-fi
-
-if [ -e ~/.bashrc.local ]
-then
-  . ~/.bashrc.local
-fi
+# added by Miniconda3 4.1.11 installer
+export PATH="/Users/pmaag/miniconda3/bin:$PATH"
 
 # do this last, so stuff in the current directory
 # overrides everything else.
@@ -108,14 +74,3 @@ fi
 # add . to the path
 export PATH=.:$PATH
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# Setting PATH for Python 2.7
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
-
-set_to_java_7 () {
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
-    echo "JAVA_HOME set to $JAVA_HOME"
-}
