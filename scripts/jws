@@ -1,3 +1,0 @@
-perl -p -i -e 's#-XX:MaxPermSize=192m##g' "$1"
-
-javaws "$1"
