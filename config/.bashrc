@@ -31,8 +31,7 @@ then # we're on a linux box
 fi
 
 # aliases
-alias sudo='sudo -E'
-alias ls='ls -la'
+source ~/dotfiles/config/aliases
 
 # vim
 set -o vi

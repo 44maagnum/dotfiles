@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# general
+alias sudo='sudo -E'
+alias ls='ls -la'
+
+# docker
+# # remove all containers
+alias drac='docker rm -f $(docker ps -aq)'
+# # remove all images
+alias drai='docker rmi -f $(docker images -q)'
+
+# gradle
+alias gw='./gradlew'
+
